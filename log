@@ -80,3 +80,24 @@ c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of typ
 cc1.exe: all warnings being treated as errors
 Compilation failed
 b48f1b1
+do.,  8 de may. de 2022 16:55:21: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+heap.c: In function 'heap_push':
+heap.c:28:26: error: 'return' with a value, in function returning void [-Werror]
+    if(pq->size==0)return NULL;
+                          ^~~~
+heap.c:27:6: note: declared here
+ void heap_push(Heap* pq, void* data, int priority){
+      ^~~~~~~~~
+heap.c:29:62: error: passing argument 1 of 'realloc' makes pointer from integer without a cast [-Werror=int-conversion]
+    if(pq->size+1>=pq->capac)pq->heapArray=(heapElem*)realloc(pq->capac*2,sizeof(heapElem));
+                                                              ^~
+In file included from test.c:2:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+15c35f3
