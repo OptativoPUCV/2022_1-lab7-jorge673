@@ -264,3 +264,9 @@ heap.c:19:6: note: previous definition of 'view_array' was here
       ^~~~~~~~~~
 Compilation failed
 44a4da6
+do.,  8 de may. de 2022 22:29:01: 
+ heap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  7|1
+total_score: 60/70
+91086b1
