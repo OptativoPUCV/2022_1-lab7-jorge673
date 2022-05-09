@@ -39,8 +39,23 @@ void heap_push(Heap* pq, void* data, int priority){
       }
    }
 
-   pq->heapArray[pq->size].priority=priority;
-   pq->heapArray[pq->size].data=data;
+   int ubicacion=pq->capac;
+   pq->heapArray[ubicacion].priority=priority;
+   pq->heapArray[ubicacion].data=data;
+
+   heapElem auxEl;
+
+   while (priority>pq->heapArray[(ubicacion-1)/2].priority)
+   {
+      auxEl=pq->heapArray[(ubicacion-1)/2];
+      pq->heapArray[(ubicacion-1)/2]=pq->heapArray[ubicacion];
+      pq->heapArray[ubicacion]=auxEl;
+      ubicacion=(ubicacion-1)/2;
+
+      if(ubicacion==0)break;
+   }
+   
+
 }  
 
 
