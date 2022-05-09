@@ -48,8 +48,10 @@ void heap_push(Heap* pq, void* data, int priority){
 
    heapElem auxEl;
 
+   printf("-ub:%d\n",ubicacion);
    while (priority>pq->heapArray[(ubicacion-1)/2].priority)
    {
+      printf("-ub:%d\n",ubicacion);
       auxEl=pq->heapArray[(ubicacion-1)/2];
       pq->heapArray[(ubicacion-1)/2]=pq->heapArray[ubicacion];
       pq->heapArray[ubicacion]=auxEl;
