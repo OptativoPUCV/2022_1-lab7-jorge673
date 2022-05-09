@@ -74,9 +74,8 @@ void heap_pop(Heap* pq){
    int ubicacion=0;
    int izq,der;
    heapElem auxEl;
-
+   view_array(pq);
    while(pq->heapArray[(ubicacion*2)+1].priority > pq->heapArray[ubicacion].priority || pq->heapArray[(ubicacion*2)+2].priority > pq->heapArray[ubicacion].priority){
-
       izq=pq->heapArray[(ubicacion*2)+1].priority;
       der=pq->heapArray[(ubicacion*2)+2].priority;
 
@@ -88,6 +87,7 @@ void heap_pop(Heap* pq){
 
       ubicacion=mayor;
       if (mayor>=pq->size)break;
+      view_array(pq);
    }
 
 }
