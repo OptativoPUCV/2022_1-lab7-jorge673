@@ -30,7 +30,7 @@ void heap_push(Heap* pq, void* data, int priority){
 
    if(pq->size>=pq->capac){
       pq->capac=pq->capac*2+1;
-      pq->heapArray=realloc(pq->heapArray,pq->capac);
+      pq->heapArray=(Heap*)realloc(pq->heapArray,pq->capac*sizeof(Heap));
    }
 
    for(int i=0;i<pq->size;i++){
