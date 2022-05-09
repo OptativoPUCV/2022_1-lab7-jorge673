@@ -252,3 +252,15 @@ heap.c:77:4: note: previous implicit declaration of 'view_array' was here
 cc1.exe: all warnings being treated as errors
 Compilation failed
 c4e6fe0
+do.,  8 de may. de 2022 22:27:42: 
+ heap.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+test.c:55:6: error: redefinition of 'view_array'
+ void view_array(Heap* h){
+      ^~~~~~~~~~
+In file included from test.c:4:0:
+heap.c:19:6: note: previous definition of 'view_array' was here
+ void view_array(Heap* h){
+      ^~~~~~~~~~
+Compilation failed
+44a4da6

@@ -16,6 +16,14 @@ typedef struct Heap{
   int capac;
 } Heap;
 
+void view_array(Heap* h){
+    int i;
+    printf("\t[");
+    for(i=0; i<h->size; i++){
+        printf("%d ",h->heapArray[i].priority);
+    }
+    printf("]\n");
+}
 
 void* heap_top(Heap* pq){
    if(pq->size==0)return NULL;
