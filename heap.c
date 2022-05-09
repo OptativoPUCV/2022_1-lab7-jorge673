@@ -88,13 +88,13 @@ void heap_pop(Heap* pq){
       der=pq->heapArray[(ubicacion*2)+2].priority;
 
       int mayor=MayorI(izq,der,(ubicacion*2)+1,(ubicacion*2)+2);
-
+      if (mayor>=pq->size)break;
+      
       auxEl=pq->heapArray[mayor];
       pq->heapArray[mayor]=pq->heapArray[ubicacion];
       pq->heapArray[ubicacion]=auxEl;
 
       ubicacion=mayor;
-      if (mayor>=pq->size)break;
       verArreglo(pq);
    }
 
