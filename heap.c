@@ -39,7 +39,10 @@ void heap_push(Heap* pq, void* data, int priority){
       }
    }
 
-   int ubicacion=pq->capac;
+   int ubicacion=pq->size;
+   pq->size++;
+
+   
    pq->heapArray[ubicacion].priority=priority;
    pq->heapArray[ubicacion].data=data;
 

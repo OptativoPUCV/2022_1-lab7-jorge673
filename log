@@ -164,3 +164,8 @@ do.,  8 de may. de 2022 21:03:38:
  tests:  2|2
 total_score: 20/70
 6669f85
+do.,  8 de may. de 2022 21:05:03: 
+ heap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+ tests:  0|0
+f5b2e01
