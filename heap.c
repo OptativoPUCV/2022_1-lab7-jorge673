@@ -26,7 +26,7 @@ void* heap_top(Heap* pq){
 
 void heap_push(Heap* pq, void* data, int priority){
 
-   if(pq->size==0)return NULL;
+   if(pq->size==0)return;
 
    if(pq->size>=pq->capac){
       pq->capac=pq->capac*2;
@@ -35,7 +35,7 @@ void heap_push(Heap* pq, void* data, int priority){
 
    for(int i=0;i<pq->size;i++){
       if(pq->heapArray[i].priority==priority){
-         return NULL;
+         return;
       }
    }
 

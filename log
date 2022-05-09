@@ -158,3 +158,9 @@ heap.c:27:6: note: declared here
 cc1.exe: all warnings being treated as errors
 Compilation failed
 30aca49
+do.,  8 de may. de 2022 21:03:38: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  2|2
+total_score: 20/70
+6669f85
