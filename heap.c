@@ -68,10 +68,10 @@ void heap_push(Heap* pq, void* data, int priority){
 
 }  
  
- int MayorI(int a,int b,int indexA,int indexB){
+ int MayorI(int a,int b,int indexA,int indexB){//funcion compara prioridades y devuelve el indice del cual sea el mayor 
       if(a>b)return indexA;
       else if(b>a)return indexB;
-      else return -1;
+      else return -1;//si son iguales devuelve -1 el cual trata de un error porque supuestamente no deberia haber nodos iguales
  }
 
 void heap_pop(Heap* pq){
@@ -82,12 +82,14 @@ void heap_pop(Heap* pq){
    int ubicacion=0;
    int izq,der;
    heapElem auxEl;
-   verArreglo(pq);
+   
    while(pq->heapArray[(ubicacion*2)+1].priority > pq->heapArray[ubicacion].priority || pq->heapArray[(ubicacion*2)+2].priority > pq->heapArray[ubicacion].priority){
       izq=pq->heapArray[(ubicacion*2)+1].priority;
       der=pq->heapArray[(ubicacion*2)+2].priority;
 
       int mayor=MayorI(izq,der,(ubicacion*2)+1,(ubicacion*2)+2);
+      if (mayor==-1)return;//no deberian haber nodos iguales 
+
       if (mayor>=pq->size)break;
 
       auxEl=pq->heapArray[mayor];
@@ -95,7 +97,6 @@ void heap_pop(Heap* pq){
       pq->heapArray[ubicacion]=auxEl;
 
       ubicacion=mayor;
-      verArreglo(pq);
    }
 
 }
