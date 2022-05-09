@@ -77,7 +77,7 @@ void heap_push(Heap* pq, void* data, int priority){
 void heap_pop(Heap* pq){
    if(pq->size==0)return;
 
-   pq->heapArray[0]=pq->heapArray[pq->size];
+   pq->heapArray[0]=pq->heapArray[pq->size-1];
    pq->size--;
    int ubicacion=0;
    int izq,der;
@@ -89,7 +89,7 @@ void heap_pop(Heap* pq){
 
       int mayor=MayorI(izq,der,(ubicacion*2)+1,(ubicacion*2)+2);
       if (mayor>=pq->size)break;
-      
+
       auxEl=pq->heapArray[mayor];
       pq->heapArray[mayor]=pq->heapArray[ubicacion];
       pq->heapArray[ubicacion]=auxEl;
