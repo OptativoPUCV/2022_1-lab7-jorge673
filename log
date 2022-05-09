@@ -179,3 +179,9 @@ do.,  8 de may. de 2022 21:09:21:
  1 file changed, 2 insertions(+)
  tests:  6|0
 dff63ab
+do.,  8 de may. de 2022 21:10:13: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|2
+total_score: 35/70
+e8b0c35

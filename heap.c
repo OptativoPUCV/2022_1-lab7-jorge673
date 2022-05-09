@@ -59,7 +59,7 @@ void heap_push(Heap* pq, void* data, int priority){
 
       if(ubicacion==0)break;
    }
-   
+   printf("-ub:%d\n",ubicacion);
 
 }  
 
