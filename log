@@ -213,3 +213,17 @@ heap.c:66:14: error: return makes integer from pointer without a cast [-Werror=i
 cc1.exe: all warnings being treated as errors
 Compilation failed
 702e47d
+do.,  8 de may. de 2022 22:23:35: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+heap.c: In function 'MayorI':
+heap.c:66:7: error: 'return' with no value, in function returning non-void [-Werror]
+       return ;
+       ^~~~~~
+heap.c:63:6: note: declared here
+  int MayorI(int a,int b,int indexA,int indexB){
+      ^~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+c86e763

@@ -63,7 +63,7 @@ void heap_push(Heap* pq, void* data, int priority){
  int MayorI(int a,int b,int indexA,int indexB){
       if(a>b)return indexA;
       if(b>a)return indexB;
-      return NULL;
+      return ;
  }
 
 void heap_pop(Heap* pq){
