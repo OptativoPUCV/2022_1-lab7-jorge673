@@ -48,10 +48,8 @@ void heap_push(Heap* pq, void* data, int priority){
 
    heapElem auxEl;
 
-   printf("-ub:%d\n",ubicacion);
    while (priority>pq->heapArray[(ubicacion-1)/2].priority)
    {
-      printf("-ub:%d\n",ubicacion);
       auxEl=pq->heapArray[(ubicacion-1)/2];
       pq->heapArray[(ubicacion-1)/2]=pq->heapArray[ubicacion];
       pq->heapArray[ubicacion]=auxEl;
@@ -59,12 +57,38 @@ void heap_push(Heap* pq, void* data, int priority){
 
       if(ubicacion==0)break;
    }
-   printf("-ub:%d\n",ubicacion);
 
 }  
-
+ 
+ int MayorI(int a,int b,int indexA,int indexB){
+      if(a>b)return indexA;
+      if(b>a)return indexB;
+      return NULL;
+ }
 
 void heap_pop(Heap* pq){
+   if(pq->size==0)return;
+
+   pq->heapArray[0]=pq->heapArray[pq->size];
+   pq->size--;
+   int ubicacion=0;
+   int izq,der;
+   heapElem auxEl;
+
+   while(pq->heapArray[(ubicacion*2)+1].priority > pq->heapArray[ubicacion].priority || pq->heapArray[(ubicacion*2)+2].priority > pq->heapArray[ubicacion].priority){
+
+      izq=pq->heapArray[(ubicacion*2)+1].priority;
+      der=pq->heapArray[(ubicacion*2)+2].priority;
+
+      int mayor=MayorI(izq,der,(ubicacion*2)+1,(ubicacion*2)+2);
+
+      auxEl=pq->heapArray[mayor];
+      pq->heapArray[mayor]=pq->heapArray[ubicacion];
+      pq->heapArray[ubicacion]=auxEl;
+
+      ubicacion=mayor;
+      if (mayor>=pq->size)break;
+   }
 
 }
 

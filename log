@@ -202,3 +202,14 @@ do.,  8 de may. de 2022 21:12:38:
  tests:  7|1
 total_score: 45/70
 2a20710
+do.,  8 de may. de 2022 22:23:17: 
+ heap.c | 30 +++++++++++++++++++++++++++---
+ 1 file changed, 27 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+heap.c: In function 'MayorI':
+heap.c:66:14: error: return makes integer from pointer without a cast [-Werror=int-conversion]
+       return NULL;
+              ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+702e47d
